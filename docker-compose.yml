@@ -1,0 +1,9 @@
+version: '3'
+services: 
+    redis-server: #reddis image
+        image: 'redis'
+    node-app:      # node image using the docker file
+        restart: always #restart policy ("no",always,on-failure,unless-stopped)
+        build: .
+        ports: 
+            - "8081:8081" #port forwarding
